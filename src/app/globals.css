@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 248 250 252;
+  --card: 255 255 255;
+  --border: 226 232 240;
+  --foreground: 15 23 42;
+  --muted: 71 85 105;
+  --primary: 29 78 216;
+  --primary-fg: 255 255 255;
+  --tint: 238 242 255;
+  --navy: 11 27 52;
+  --accent: 245 158 11;
+  --success: 4 120 87;
+}
+.dark {
+  --background: 11 18 32;
+  --card: 17 26 46;
+  --border: 34 48 74;
+  --foreground: 230 237 247;
+  --muted: 148 163 184;
+  --primary: 107 149 255;
+  --primary-fg: 11 27 52;
+  --tint: 22 34 61;
+  --success: 52 211 153;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply bg-background text-foreground antialiased; }
+  h1, h2, h3, h4 { @apply font-heading tracking-tight; }
+  :focus-visible { @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .section-y { @apply py-16 md:py-24; }
+  .card-surface { @apply rounded-2xl border border-border bg-card; }
+  .input-base { @apply min-h-[42px] w-full rounded-xl border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted/70 focus:border-primary disabled:cursor-not-allowed disabled:opacity-60; }
+}
